@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /js/
+Disallow: /db/
+Disallow: /assets/fonts/
+Disallow: /fotos.php
+Disallow: /index.php
+Disallow: /contacto.php
+Disallow: /complejo.php
+Disallow: /tarifas.php
+Disallow: /servicios.php
+Disallow: /ubicacion.php
+Disallow: /media.php
+sitemap: http://www.campingmagdalena.com.ar/sitemap.xml

@@ -1,0 +1,41 @@
+h2 {
+    color: $light-green;
+    margin: 1em 0 .5em;
+}
+
+h3 {
+    //color: darken($orange, 10%);
+    margin: 1em 0 .5em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.important {
+    width: 100%;
+    padding: 1em;
+    background: rgba(51, 153, 204, .45);
+    border: 1px solid $sky-blue;
+    border-radius: 1em;
+    margin: 1em 0;
+    &>p {
+        color: #333;
+        font-weight: $bold;
+    }
+    /*&>p:before {
+    content: "i ";
+    font-size: 12em;
+    color: $sky-blue;
+    }
+    */
+}
+
+.price {
+    color: $sky-blue;
+}
+
+#main {
+    @include to(web) {
+        text-align: center;
+    }
+}

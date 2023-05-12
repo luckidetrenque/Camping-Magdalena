@@ -1,0 +1,65 @@
+.toggle-menu {
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+}
+
+.ed-menu {
+    @include to(web) {
+        position: absolute;
+        //top: 19%;
+        top: 110px;
+        left: -100%;
+        background: rgba($green,.85);
+        width: 100%;
+        //height: 56vh;
+        z-index: 900;
+        transition: all .3s;
+        border-radius: 0;
+    }
+    &__item {
+        border-bottom: 1px solid rgba(#fff, .1);
+        @include from(web){
+            border-bottom: none;
+        }
+    }
+    &__link {
+        display: block;
+        color: $orange;
+        font-weight: $normal;
+        line-height: 1.5em;
+        text-transform: uppercase;
+    }
+    &__link:hover {
+        background-color: $light-green;
+        color: #fff;
+        transition: all .85s;
+        text-decoration: none;
+        @include to (web) {
+            border-radius: 0%;
+            background-color: $light-green;
+        }
+        @include from (web) {
+            border-radius: 0 0 45% 45%;
+        }
+    }
+}
+
+.ed-menu.mostrar {
+    left:0;
+}
+
+.active {
+    background-color: $light-green;
+    color: #fff;
+    @include to (web) {
+        border-radius: 0%;
+    }
+    @include from (web) {
+        border-radius: 0 0 45% 45%;
+    }
+}

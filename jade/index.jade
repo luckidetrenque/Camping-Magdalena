@@ -1,0 +1,96 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+        title Camping Magdalena, Complejo de Caba&ntilde;as
+        meta(name="viewport",content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0")
+        meta(name="description",content="Camping Magdalena, Complejo de Caba&ntilde;as frente al río de La Plata")
+        link(rel="stylesheet", href="css/estilos.css")
+        link(rel="shortcut icon", href="http://www.campingmagdalena.com.ar/favicon.ico")
+            
+    body#inicio
+        header#header
+            .ed-container
+                include blocks/header                        
+                .ed-item.base-100.tablet-90.web-80.main-end.distribute
+                    .icon-menu.espacio.toggle-menu.hasta-web Men&uacute;
+                    ul.ed-menu.web-horizontal
+                        li.ed-menu__item
+                            a.ed-menu__link.active(href="index.html",title="Camping Magdalena, Complejo de Caba&ntilde;as") Inicio
+                        li.ed-menu__item
+                            a.ed-menu__link(href="complejo.html",title="Conocé nuestro complejo") Complejo
+                        li.ed-menu__item
+                            a.ed-menu__link(href="servicios.html",title="Servicios que ofrecemos") Servicios
+                        li.ed-menu__item
+                            a.ed-menu__link(href="tarifas.html",title="Tarifas de la temporada 2016") Tarifas
+                        li.ed-menu__item
+                            a.ed-menu__link(href="media.html",title="Fotos y videos del camping") Fotos/Videos
+                        li.ed-menu__item
+                            a.ed-menu__link(href="ubicacion.html",title="Aquí es donde estamos ubicados") Ubicaci&oacute;n
+                        li.ed-menu__item
+                            a.ed-menu__link(href="contacto.html",title="Contactanos por consultas e informes") Contacto  
+        main#main
+            .ed-container.distribute
+                .ed-item.slogan.abcenter
+                    .before
+                    p.slogan__subtitle Te damos la bienvenida a
+                    h1.slogan__title Camping Magdalena, Complejo de Caba&ntilde;as
+                    a.button.abcenter(href="complejo.html") Conoc&eacute; nuestro complejo
+                .ed-item.tablet-50.web-40
+                    h2.main__subtitle Sobre nosotros
+                    p.main__description Nos encontramos en una excelente y estrat&eacute;gica ubicaci&oacute;n, a solo 30 metros de la bajada al Balneario Municipal de la ciudad de Magdalena, Buenos Aires, Argentina.
+                    p.main__description Te ofrecemos todo lo necesario para que puedas disfrutar de tu estad&iacute;a en un <br /> strong ambiente tranquilo, confortable y familiar.
+                    a.button(href="ubicacion.html") Ver nuestra ubicaci&oacute;n
+
+                    h2.main__subtitle Nuestras instalaciones
+                    p.main__description Contamos con un excelente predio arbolado, Bungalows, Departamentos y Dormis con capacidad para 4 personas, sector parcelado para Carpas con energ&iacute;a el&eacute;ctrica, &aacute;rea de fogones con parrillas y mesas, ba&ntilde;os y vestuarios con duchas.
+                    a.button(href="servicios.html") Servicios que ofrecemos
+                .ed-item.tablet-50.web-35
+                    h3.main__subtitle Disfrut&aacute; de la naturaleza
+                    p.main__description El Balneario Municipal de Magdalena es un espacio verde que se encuentra sobre el R&iacute;o de la Plata, por lo tanto las actividades y deportes que se pueden realizar en su ancha playa, son variadas.
+                    p.main__description Desde el avistaje de especies aut&oacute;ctonas y variedad de aves, hasta deportes n&aacute;uticos y pesca de Corvina negra, Corvina rubia, Paty, Pejerrey y Lisa.
+                    p.main__description Adem&aacute;s cuando baja la marea queda libre una playa de arena de 1.000 metros en la que se puede andar con cuatriciclos.
+                    h3 Actividades y Deportes
+                    #slider
+                        ul.slider
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-caminata.jpg", alt="Caminata")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-canotaje.jpg", alt="Canotaje")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-cuatriciclo.jpg", alt="Cuatriciclo")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-kayak.jpg", alt="Kayak")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-kitesurf.jpg", alt="Kitesurf")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-natacion.jpg", alt="Natación")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-pesca.jpg", alt="Pesca")
+                            li.slider__item
+                                img.slider__img(src="assets/images/actividades-vela.jpg", alt="Vela")
+        // Seccion libre para un banner o publicidad
+        aside#aside
+            //.ed-container
+                .ed-item.web-50.main-end
+                    h3 El clima en Magdalena
+                    div#cont_0038340c188c8383dce17a8943dfc2c4
+                        span#h_0038340c188c8383dce17a8943dfc2c4
+                        script(src="http://www.tiempo.com/wid_loader/0038340c188c8383dce17a8943dfc2c4")
+        footer#footer
+            include blocks/footer
+        script(src="https://code.jquery.com/jquery-1.12.0.min.js")
+        script(src="js/scripts.js")
+        // Inicio Google Analytic
+        script.
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19487363-4']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        // Fin Google Analytic

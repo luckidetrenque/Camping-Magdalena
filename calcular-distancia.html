@@ -1,0 +1,100 @@
+<script type="text/javascript">
+    jQuery("#btnMkgdSubmit").click(function() {
+      var start = document.getElementById('origin').value;
+      var end = document.getElementById('destination').value;
+      if (start == "" || end == "") {
+        alert("Please enter start and end points of your destination.");
+        return false;
+      }
+      jQuery('#directions').html('<center><br/><img src="http://campinglillo.com.ar/site/wp-content/plugins/mk-google-directions/images/loader.gif" alt="Loading Directions" title="Loading Directions"/></center>');
+      jQuery.post('http://campinglillo.com.ar/site/wp-content/plugins/google-distance-calculator/mkgd-ajax-handler.php', {origin: start, destination: end, language: 'es', units: ''}, function(data) {
+        jQuery('#directions').html(data);
+      });
+    });
+  </script>
+  <script type="text/javascript">
+    /*
+     * Load the google map
+     */
+    function initialize() {
+      directionsDisplay = new google.maps.DirectionsRenderer();
+      var chicago = new google.maps.LatLng(-38.589433, -58.743789);
+      var mapOptions = {
+        zoom: 7,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: chicago
+      }
+      map = new google.maps.Map(document.getElementById('mkgd-map-canvas'), mapOptions);
+      directionsDisplay.setMap(map);
+    }
+
+  </script>
+
+<div id="mkgd-wrap"><ul class="mkgd-form"><li><label for = "origin">Localidad de origen</label><input id = "origin" name = "origin" value = "" type = "text" size = "50" /></li><input id = "destination" name = "destination" value = "Necochea, Buenos Aires, Argentina" type = "hidden"/><li><input type="button" onclick="calcRoute();" name="btnMkgdSubmit" id="btnMkgdSubmit" value="Calcular"/></li></ul><!-- End .mkgd-form -->
+    <div id="mkgd-map-canvas"></div><!-- End #mkgd-map-canvas -->
+    <div id="directions"></div><!-- End #directions -->
+  </div><!-- End #mkgd-wrap -->
+
+<!-- mkgd-ajax-handler.php -->
+<?php
+if ($_POST['origin'] != "" && $_POST['destination'] != "") {
+  $origin = str_replace(' ', '+', $_POST['origin']);
+  $destination = str_replace(' ', '+', $_POST['destination']);
+  $language = $_POST['language'];
+  $units = $_POST['units'];
+  $url = "http://maps.googleapis.com/maps/api/directions/json?origin=" . $origin . "&destination=" . $destination . "&sensor=false&language=" . $language . '&units=' . $units;
+// sendRequest
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//curl_setopt($ch, CURLOPT_REFERER, 'http://yourdemolink.com/php/googlemaps-json/index.php');
+  $body = curl_exec($ch);
+  curl_close($ch);
+  $json = json_decode($body);
+//  echo "<pre>";print_r($json);echo "</pre>";
+  if ($json->status != 'ZERO_RESULTS') {
+    $legs = $json->routes[0]->legs[0];
+    $drivingSteps = $json->routes[0]->legs[0]->steps;
+    ?>
+    <!-- ----------------------------------------------- -->
+    
+    <h4>Details</h4>
+    <p>Distance between <strong><?php echo $legs->start_address; ?></strong> and <strong><?php echo $legs->end_address; ?></strong> is: <strong><?php echo $legs->distance->text; ?></strong></p>
+    <p>Approx. time of journey: <strong><?php echo $legs->duration->text; ?></strong></p>
+    
+    <h4>Driving directions:</h4>
+    <h5>Start: <?php echo $legs->start_address; ?></h5>
+    <ul>
+      <?php foreach ($drivingSteps as $drivingStep) { ?>
+        <li><div class="dir-tt dir-tt-<?php echo $drivingStep->maneuver;?>"><img src="//maps.gstatic.com/tactile/directions/text_mode/maneuvers-2x.png" width="19" height="630" jstcache="0"></div><?php echo $drivingStep->html_instructions; echo '<span class="distance-time">'.$drivingStep->distance->text.' / '.$drivingStep->duration->text.'</span>';?></li>
+        <?php
+      }?>
+      <h5>End: <?php echo $legs->end_address; ?></h5>
+    <?php } else {
+      echo "<h4 class=\"mkgd-error\">Google cannot find directions for the Origin addess that you entered.</h4>";
+    }
+    
+  }
+  ?>
+    <div id="directions">    <h4>La distancia entre Trenque Lauquen, Buenos Aires, Argentina y el Camping Miguel Lillo en Necochea, Buenos Aires, Argentina es: 514 km
+        </h4><h4>Tiempo de viaje aproximado: 5h 15 min</h4>
+        <h4>Recorrido sugerido:</h4>
+        <ul>
+                  <li>Dirígete hacia el <b>sureste</b> en <b>San Martín</b> hacia <b>Gdor. Irigoyen</b></li>
+                    <li>Gira a la <b>derecha</b> hacia <b>Batallon 2 de Infanteria</b></li>
+                    <li>En la rotonda, toma la <b>cuarta</b> salida en dirección <b>Acceso A Gral. Salinas</b>/<b>Gral. Salinas</b><div style="font-size:0.9em">Continúa hacia Gral. Salinas</div></li>
+                    <li>En la rotonda, toma la <b>tercera</b> salida en dirección <b>RN5</b><div style="font-size:0.9em">Carretera parcialmente con peajes</div></li>
+                    <li>Toma la salida para incorporarte a <b>RN226</b></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida y continúa por <b>RN226</b></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida y continúa por <b>RN226</b><div style="font-size:0.9em">Carretera parcialmente con peajes</div></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida y continúa por <b>RN226</b></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida y continúa por <b>RN226</b></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida y continúa por <b>RN226</b></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida en dirección <b>Pres. Nestor Kirchner</b></li>
+                    <li>Gira a la <b>derecha</b> hacia <b>RN3</b></li>
+                    <li>En la rotonda, toma la <b>tercera</b> salida en dirección <b>RP86</b></li>
+                    <li>En la rotonda, toma la <b>segunda</b> salida y continúa por <b>RP86</b></li>
+                    <li>Mantente a la <b>derecha</b> para continuar por <b>Av. 58</b></li>
+                    <li>Entra en la rotonda<div style="font-size:0.9em">El destino está a la izquierda.</div></li>
+
+    </ul></div>

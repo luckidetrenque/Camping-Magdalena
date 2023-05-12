@@ -1,0 +1,93 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+        title Camping Magdalena, Tarifas 2016
+        meta(name="viewport",content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0")
+        meta(name="description",content="Camping Magdalena, Tarifas Temporada 2016")
+        link(rel="stylesheet", href="css/estilos.css")
+        link(rel="shortcut icon", href="http://www.campingmagdalena.com.ar/favicon.ico")
+        
+    body#tarifas
+        header#header
+            .ed-container
+                include blocks/header
+                .ed-item.base-100.web-80.main-end.distribute
+                    .icon-menu.espacio.toggle-menu.hasta-web Men&uacute;
+                    ul.ed-menu.web-horizontal
+                        li.ed-menu__item
+                            a.ed-menu__link(href="index.html",title="Camping Magdalena, Complejo de Cabañas") Inicio
+                        li.ed-menu__item
+                            a.ed-menu__link(href="complejo.html",title="Conocé nuestro complejo") Complejo
+                        li.ed-menu__item
+                            a.ed-menu__link(href="servicios.html",title="Servicios que ofrecemos") Servicios
+                        li.ed-menu__item
+                            a.ed-menu__link.active(href="tarifas.html",title="Tarifas de la temporada 2016") Tarifas
+                        li.ed-menu__item
+                            a.ed-menu__link(href="media.html",title="Fotos y videos del camping") Fotos/Videos
+                        li.ed-menu__item
+                            a.ed-menu__link(href="ubicacion.html",title="Aquí es donde estamos ubicados") Ubicaci&oacute;n
+                        li.ed-menu__item
+                            a.ed-menu__link(href="contacto.html",title="Contactanos por consultas e informes") Contacto  
+        main#main
+            .ed-container.distribute
+                .ed-item.slogan.abcenter
+                    .before
+                    p.slogan__subtitle Tarifario 2016
+                    h1.slogan__title precios accesibles
+                    ul.complejo
+                    a.button(href="contacto.html") Consultas y/o Reservas
+                .ed-item.web-40
+                    h2 Tarifas Temporada 2016
+                    h3.main__subtitle Bungalows
+                    p.main__description Alquiler de bungalow con capacidad y comodidad para cuatro (4) personas, incluido estacionamiento para el auto y uso de las instalaciones: 
+                        strong.price $ 500.- por d&iacute;a.
+                    h3.main__subtitle Departamentos (ex-camping "El Sol")
+                    p.main__description Alquiler de departamento con capacidad y comodidad para cuatro (4) personas, incluido estacionamiento para el auto y uso de las instalaciones: 
+                        strong.price $ 400.- por d&iacute;a.
+                    h3.main__subtitle Dormis
+                    p.main--description Alquiler de dormi (Caba&ntilde;a de madera en altura) con capacidad y comodidad para cuatro (4) personas, incluido estacionamiento para el auto y uso de las instalaciones: 
+                        strong.price $ 400.- por d&iacute;a.
+                    h3.main__subtitle Parcelas para Carpa
+                    p.main--description Alquiler de parcela para cuatro (4) personas, incluido estacionamiento para el auto y uso de las instalaciones: 
+                        strong.price $ 200.- por d&iacute;a.
+                    h3.main__subtitle Tarifas Estad&iacute;a 2016
+                    p.main--description Te ofrecemos la posibilidad de pasar el d&iacute;a en el camping.
+                    p Visitas: 
+                        strong.price $ 30.- por persona
+                        , incluido uso de fog&oacute;n con parrilla techada, toillete con agua fr&iacute;a y caliente y uso de espacios verdes.
+                    p Estacionamiento para el auto: 
+                        strong.price $ 30.- por d&iacute;a.
+                .ed-item.web-30.abcenter
+                    .important
+                        p Los fines de semana (S&aacute;bado y Domingo) el alquiler de bungalows, departamentos, dormis y parcelas para carpas es  
+                            strong unicamente por los dos (2) d&iacute;as.
+                        p Fines de semanas largos de 3 y 4 d&iacute;as el alquiler de bungalows, departamentos, dormis y parcelas para carpas es
+                            strong unicamente por el fin de semana completo.
+                    .important
+                        p Temporada Alta: Reservas con anticipaci&oacute;n de quince (15) d&iacute;as a la fecha de ingreso.
+                        p Tarifas disponibles hasta el 
+                            strong 01&frasl;12&frasl;2016. Estad&iacute;a sujeta a disponibilidad del momento.
+                    .important
+                        p Por el alquiler de habitaciones a Empresas (Consultar)
+                        p Por el ingreso al predio con Casas Rodantes y Trailers (Consultar)
+                        a.button(href="contacto.html") Consultar
+        // Seccion libre para un banner o publicidad
+        section#aside
+        footer#footer
+            include blocks/footer
+        script(src="https://code.jquery.com/jquery-1.12.0.min.js")
+        script(src="js/scripts.js")
+        // Inicio Google Analytic
+        script.
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19487363-4']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        // Fin Google Analytic

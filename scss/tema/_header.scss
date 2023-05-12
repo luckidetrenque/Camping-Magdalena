@@ -1,0 +1,8 @@
+#header {
+    padding-top: .75em;
+    background-color: #ccc;
+    width: 100%;
+    @include desde(web) {
+    
+    }
+}

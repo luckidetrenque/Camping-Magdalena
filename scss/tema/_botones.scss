@@ -1,0 +1,13 @@
+.button {
+    background: $orange;
+    color: #fff;
+    border: 1px solid $orange;
+    font-weight: 500;
+    &:hover {
+        background: #fff;
+        color: $sky-blue;
+        border: 1px solid $orange;
+        transition: all .85s;
+        text-decoration: none;
+    }
+}

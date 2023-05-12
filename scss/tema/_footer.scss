@@ -1,0 +1,47 @@
+#footer {
+    height: auto;
+    padding: .5em 0;
+    background-color: $light-green;
+    color: darken($light-green, 25%);
+    font-weight: $bold;
+    margin: 1.5em 0 0;
+    //transform: skewY(4deg);
+    //transform-origin: bottom left;
+    //> .ed-container {
+    //    transform: skewY(-4deg);
+    //}
+}
+
+.copy {
+    @include to(web) {
+        text-align: center;
+    }
+}
+
+.sociales {
+    text-align: center;
+    //padding-top: 1em;
+    a {
+        display: inline-block;
+        width: 16%;
+        color: $light-green;
+        background: darken($light-green, 15%);
+        font-size: 1.5em;
+        margin: .4em;
+        border-radius: 50%;
+        padding: .4em;
+        transition: all .25s;
+        text-decoration: none;
+        @include from(web) {
+            width: 14%;
+        }
+        &.icon-facebook:hover {
+            color: #fff;
+            background: #3b5998;
+        }
+        &.icon-youtube:hover {
+            color: #fff;
+            background: #bb0000;
+        }
+    }
+}

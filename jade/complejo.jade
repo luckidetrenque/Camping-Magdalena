@@ -1,0 +1,96 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+        title Camping Magdalena, Complejo de Caba&ntilde;as
+        meta(name="viewport",content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0")
+        meta(name="description",content="Camping Magdalena, Dormis, Caba&ntilde;as y Bungalows")
+        link(rel="stylesheet", href="css/estilos.css")
+        link(rel="shortcut icon", href="http://www.campingmagdalena.com.ar/favicon.ico")
+        
+    body#complejo
+        header#header
+            .ed-container
+                include blocks/header
+                .ed-item.base-100.web-80.main-end.distribute
+                    .icon-menu.espacio.toggle-menu.hasta-web Men&uacute;
+                    ul.ed-menu.web-horizontal
+                        li.ed-menu__item
+                            a.ed-menu__link(href="index.html",title="Camping Magdalena, Complejo de Caba&ntilde;as") Inicio
+                        li.ed-menu__item
+                            a.ed-menu__link.active(href="complejo.html",title="Conocé nuestro complejo") Complejo
+                        li.ed-menu__item
+                            a.ed-menu__link(href="servicios.html",title="Servicios que ofrecemos") Servicios
+                        li.ed-menu__item
+                            a.ed-menu__link(href="tarifas.html",title="Tarifas de la temporada 2016") Tarifas
+                        li.ed-menu__item
+                            a.ed-menu__link(href="media.html",title="Fotos y videos del camping") Fotos/Videos
+                        li.ed-menu__item
+                            a.ed-menu__link(href="ubicacion.html",title="Aquí es donde estamos ubicados") Ubicaci&oacute;n
+                        li.ed-menu__item
+                            a.ed-menu__link(href="contacto.html",title="Contactanos por consultas e informes") Contacto  
+        main#main
+            .ed-container.distribute
+                .ed-item.slogan.abcenter
+                    .before
+                    h1.slogan__title Conoc&eacute; nuestro complejo
+                    ul.complejo
+                        li.complejo__item
+                            a.complejo__link(href="#bungalows") Bungalows
+                        li.complejo__item
+                            a.complejo__link(href="#departamentos") Departamentos
+                        li.complejo__item    
+                            a.complejo__link(href="#dormis") Dormis
+                    a.button(href="servicios.html") Servicios que ofrecemos
+                .ed-item.web-30
+                    h2#bungalows.main__subtitle Bungalows
+                    p.main__description Disponemos de bungalows con capacidad y comodidad para cuatro (4) personas, equipados con ba&ntilde;o privado y ducha con agua caliente las 24 horas, cama matrimonial, cama cucheta, mesa con cuatro sillas, anafe y TV con Direct-TV. Parrilla y mesa de madera con bancos al aire libre para uso individual.
+                    p.main__description
+                        strong Ropa de cama solo con reserva y sin ropa de ba&ntilde;o.
+                .ed-item.web-30
+                    h2#departamentos.main__subtitle Departamentos
+                    p.main__description
+                        strong (ex-camping "El Sol")
+                    p.main__description Disponemos de departamentos con capacidad y comodidad para cuatro (4) personas, equipados con ba&ntilde;o privado sin ducha, cama matrimonial, cama cucheta y ventilador.
+                    p.main__description
+                        strong Sin ropa de cama y sin ropa de ba&ntilde;o.
+                .ed-item.web-30
+                    h2#dormis.main__subtitle Dormis
+                    p.main--description Disponemos de dormis (Caba&ntilde;as de madera en altura) con capacidad y comodidad para cuatro (4) personas, equipados con cama matrimonial, cama cucheta y mesa con cuatro sillas. Parrilla y mesa de madera con bancos al aire libre para uso individual.
+                    p.main__description
+                        strong Sin ropa de cama y sin ropa de ba&ntilde;o.
+            .ed-container.distribute
+                .ed-item.web-30
+                    h2#carpas.main__subtitle Alquiler de habitaciones
+                    p.main--description Disponemos de una casa para varias personas, ubicada en el centro de la ciudad de Magdalena (calle Maip&uacute; entre San Mart&iacute;n y 25 de Mayo).
+                    p.main__description La misma esta equipada con: Ba&ntilde;o y ducha con agua caliente las 24 horas, con ropa de ba&ntilde;o, cocina con utensillos, TV por cable y Wifi.
+                .ed-item.web-30
+                    h2.main__subtitle Parcelas para Carpas
+                    p.main--description Disponemos de parcelas delimitadas para carpas, con toma de energ&iacute;a el&eacute;ctrica.
+                    a.button(href="media.html") Mir&aacute; la galer&iacute;a de fotos
+                .ed-item.web-30.abcenter
+                    .important
+                        p Los Bungalows, Departamentos, Dormis y Parcelas para Carpas, 
+                            strong incluyen 
+                            |estacionamiento para el auto y uso de las instalaciones.
+                        h4
+                            em Horario de Entrada (check in): 10:00 am Horario de Salida (check out): 10:00 am
+        // Seccion libre para un banner o publicidad
+        aside#aside
+        footer#footer
+            include blocks/footer
+        script(src="https://code.jquery.com/jquery-1.12.0.min.js")
+        script(src="js/scripts.js")
+        // Inicio Google Analytic
+        script.
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19487363-4']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        // Fin Google Analytic

@@ -1,0 +1,83 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+        title Camping Magdalena, Fotos y Videos
+        meta(name="viewport",content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0")
+        meta(name="description",content="Fotos y videos de Camping Magdalena, Complejo de Caba&ntilde;as")
+        link(rel="stylesheet", href="css/estilos.css")
+        link(rel="shortcut icon", href="http://www.campingmagdalena.com.ar/favicon.ico")
+        
+    body#media
+        header#header
+            .ed-container
+                include blocks/header
+                .ed-item.base-100.web-80.main-end.distribute
+                    .icon-menu.espacio.toggle-menu.hasta-web Men&uacute;
+                    ul.ed-menu.web-horizontal
+                        li.ed-menu__item
+                            a.ed-menu__link(href="index.html",title="Camping Magdalena, Complejo de Caba&ntilde;as") Inicio
+                        li.ed-menu__item
+                            a.ed-menu__link(href="complejo.html",title="Conocé nuestro complejo") Complejo
+                        li.ed-menu__item
+                            a.ed-menu__link(href="servicios.html",title="Servicios que ofrecemos") Servicios
+                        li.ed-menu__item
+                            a.ed-menu__link(href="tarifas.html",title="Tarifas de la temporada 2016") Tarifas
+                        li.ed-menu__item
+                            a.ed-menu__link.active(href="media.html",title="Fotos y videos del camping") Fotos/Videos
+                        li.ed-menu__item
+                            a.ed-menu__link(href="ubicacion.html",title="Aquí es donde estamos ubicados") Ubicaci&oacute;n
+                        li.ed-menu__item
+                            a.ed-menu__link(href="contacto.html",title="Contactanos por consultas e informes") Contacto  
+        main#main
+            .ed-container.distribute
+                .ed-item.slogan.abcenter
+                    .before
+                    p.slogan__subtitle Galer&iacute;a de fotos y videos
+                    h1.slogan__title As&iacute; como nos ves, somos
+                .ed-item.tablet-50.web-40
+                    h2#bungalows.main__subtitle Fotos
+                    .ed-container
+                      .ed-item.web-50
+                        img(src="assets/images/balneario.jpg",alt="Balneario")
+                      .ed-item.web-50
+                        img(src="assets/images/camping-magdalena.jpg",alt="Camping Magdalena")
+                      .ed-item.web-50
+                        img(src="assets/images/costanera.jpg",alt="Costanera")
+                      .ed-item.web-50
+                        img(src="assets/images/ex-complejo-el-sol.jpg",alt="Ex Complejo El Sol")
+                      .ed-item.web-50
+                        img(src="assets/images/dormis.jpg",alt="Dormis")
+                      .ed-item.web-50
+                        img(src="assets/images/parcelas-carpas.jpg",alt="Parcelas para Carpas")
+                      .ed-item.web-50
+                        img(src="assets/images/fogones-y-mesas.jpg",alt="Fogones y Mesas")
+                      .ed-item.web-50
+                        img(src="assets/images/predio.jpg",alt="Predio")
+                    p.main__description Mir&aacute; la galer&iacute;a de fotos de Facebook donde pod&eacute;s encontrar fotos del predio, de las instalaciones, del r&iacute;o y alrededores.
+                    a.button(href="https://www.facebook.com/MagdalenaCamping/photos",rel="_blank") Fotos en la p&aacute;gina de Facebook
+                .ed-item.tablet-50.web-40
+                    h2#bungalows.main__subtitle Videos
+                    .ed-video
+                      iframe(width="560",height="315",src="https://www.youtube.com/embed/videoseries?list=PL863F36AE183BDB62",frameborder="0",allowfullscreen)
+                    p.main__description Ac&aacute; pod&eacute;s ver algunos de los videos que hemos subido a YouTube.
+                    a.button(href="http://www.youtube.com/user/campingmagdalena",rel="_blank") Videos en el canal de YouTube
+        // Seccion libre para un banner o publicidad
+        aside#aside
+        footer#footer
+            include blocks/footer
+        script(src="https://code.jquery.com/jquery-1.12.0.min.js")
+        script(src="js/scripts.js")
+        // Inicio Google Analytic
+        script.
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19487363-4']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        // Fin Google Analytic

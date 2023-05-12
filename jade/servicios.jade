@@ -1,0 +1,78 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible",content="IE=edge,chrome=1")
+        title Camping Magdalena, Servicios
+        meta(name="viewport",content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=0")
+        meta(name="description",content="Servicios del Camping Magdalena, Complejo de Caba&ntilde;as")
+        link(rel="stylesheet", href="css/estilos.css")
+        link(rel="shortcut icon", href="http://www.campingmagdalena.com.ar/favicon.ico")
+        
+    body#servicios
+        header#header
+            .ed-container
+                include blocks/header
+                .ed-item.base-100.web-80.main-end.distribute
+                    .icon-menu.espacio.toggle-menu.hasta-web Men&uacute;
+                    ul.ed-menu.web-horizontal
+                        li.ed-menu__item
+                            a.ed-menu__link(href="index.html",title="Camping Magdalena, Complejo de Caba&ntilde;as") Inicio
+                        li.ed-menu__item
+                            a.ed-menu__link(href="complejo.html",title="Conocé nuestro complejo") Complejo
+                        li.ed-menu__item
+                            a.ed-menu__link.active(href="servicios.html",title="Servicios que ofrecemos") Servicios
+                        li.ed-menu__item
+                            a.ed-menu__link(href="tarifas.html",title="Tarifas de la temporada 2016") Tarifas
+                        li.ed-menu__item
+                            a.ed-menu__link(href="media.html",title="Fotos y videos del camping") Fotos/Videos
+                        li.ed-menu__item
+                            a.ed-menu__link(href="ubicacion.html",title="Aquí es donde estamos ubicados") Ubicaci&oacute;n
+                        li.ed-menu__item
+                            a.ed-menu__link(href="contacto.html",title="Contactanos por consultas e informes") Contacto  
+        main#main
+            .ed-container.distribute
+                .ed-item.slogan.abcenter
+                    .before
+                    p.slogan__subtitle Nuestra meta
+                    h1.slogan__title tu descanso, tranquilidad y seguridad
+                .ed-item.web-25.abcenter
+                    h2#bungalows.main__subtitle Nuestros servicios
+                    p.main__description El predio est&aacute; 
+                        strong totalmente cercado
+                        , con servicio de sereno y c&aacute;maras de seguridad las 24 horas, adem&aacute;s cuenta con iluminaci&oacute;n, tomacorrientes el&eacute;ctricos, piletas para lavado de ropa y vajilla.
+                    a.button(href="tarifas.html") Tarifas hasta el 01&frasl;12&frasl;2016
+                .ed-item.web-25
+                    h3.main__subtitle Sanitarios
+                    p.main__description Confortables instalaciones sanitarias con agua fr&iacute;a y caliente en lavatorios y duchas.
+                    h3.main__subtitle Fogones con Parrillas
+                    p.main__description Área de fogones con parrillas totalmente techadas y equipadas con mesas, bancos y bachas.
+                    h3.main__subtitle Pizzer&iacute;a y Helader&iacute;a
+                    p.main__description Comidas r&aacute;pidas, minutas, pizzas, hamburguesas, helados, cafe, tragos y mucho m&aacute;s.
+                .ed-item.web-25
+                    h3.main__subtitle Proveedur&iacute;a y Kiosco
+                    p.main__description Para tu comodidad y con precios accesibles.
+                    h3.main__subtitle Sal&oacute;n comedor
+                    p.main__description Sal&oacute;n multiuso con televisor (Direct-TV) y m&uacute;sica.
+                    h3.main__subtitle Estacionamiento
+                    p.main__description Contamos con lugar propio para estacionar tu veh&iacute;culo.
+                    h3.main__subtitle WiFi
+                    p.main__description Las 24 horas y en cualquier ubicaci&oacute;n del predio puede conectar su Notebook, Netbook o Celular.
+        // Seccion libre para un banner o publicidad
+        aside#aside
+        footer#footer
+            include blocks/footer
+        script(src="https://code.jquery.com/jquery-1.12.0.min.js")
+        script(src="js/scripts.js")
+        // Inicio Google Analytic
+        script.
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19487363-4']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        // Fin Google Analytic
